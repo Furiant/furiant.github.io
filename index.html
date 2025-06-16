@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Maryland State Board of Elections: Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&family=Material+Icons" rel="stylesheet">
+    <link href="../styles/base.css" rel="stylesheet">
+    <link href="../styles/home.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", load);
+
+        function load() {
+            /*let searchBtn = document.querySelector("#searchToggle");
+            searchBtn.addEventListener("click", toggleSearch);*/
+
+            let cookiesBtn = document.querySelector("#cookiesAccept");
+            cookiesBtn.addEventListener("click", closeCookiesPanel);
+
+            let details = [...document.querySelectorAll('#mainNav details')];
+            document.addEventListener('click', function (e) {
+                if (!details.some(f => f.contains(e.target))) {
+                    details.forEach(f => f.removeAttribute('open'));
+                }
+                else {
+                    details.forEach(f => !f.contains(e.target) ? f.removeAttribute('open') : '');
+                }
+            });
+
+            /*let menuDiscs = document.querySelectorAll('#mainNav summary');
+            menuDiscs.forEach(menuDisc => { menuDisc.addEventListener('focusOut', closeMenuDisc); });*/
+            /*const menuBtns = document.querySelectorAll('.menuButton');
+            menuBtns.forEach(menuBtn => {
+                menuBtn.addEventListener('click', toggleNavMenu);
+                menuBtn.addEventListener('focusin', toggleNavMenu);
+                menuBtn.addEventListener('focusout', toggleNavMenu);
+            });*/
+        }
+
+        /*function closeMenuDisc() {
+            this.parentElement.removeAttribute('open');
+        }
+
+        function toggleNavMenu() {
+            let menu = this.nextElementSibling;
+            if (document.activeElement === this) {
+                menu.classList.remove('hidden');
+            }
+            else {
+                menu.classList.add('hidden');
+            }
+            *//*menu.classList.toggle('hidden');*//*
+}*/
+
+        /*function toggleSearch() {
+            let searchInput = document.getElementById("searchQuery");
+            if (searchInput.classList.contains('displayNone')) {
+                searchInput.classList.remove('displayNone');
+                searchInput.focus();
+            }
+            else {
+                searchInput.classList.add('displayNone');
+                searchInput.blur();
+            }
+        }*/
+
+        function closeCookiesPanel() {
+            let cookiesPanel = document.getElementById("cookiesPanel");
+            cookiesPanel.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div id="wrapper" class="home">
+        <section id="topStrip">
+            <div id="sitesContainer">
+                <a href="#Facebook" class="socialLink"><img src="../images/facebook-f-white-64.png" alt="The Facebook logo" /></a>
+                <a href="#Twitter" class="socialLink"><img src="../images/twitter-x-white-64.png" alt="The Twitter/X logo" /></a>
+                <a href="#AllSocial" class="socialLink"><img src="../images/social-all-white-64.png" alt="Ellipsis graphic representing all social media sites for the agency" /></a>
+                <a href="#MdGov" id="mdGovLink">MD.gov</a>
+            </div>
+            <div id="searchContainer">
+                <label for="searchQuery" class="invis">Search</label>
+                <input id="searchQuery" name="searchQuery" type="text" placeholder="Search this site..." role="search" />
+                <button id="searchButton" type="button" name="Search"></button>
+            </div>
+            <div id="utilContainer">
+                <!--<input id="searchQuery" class="displayNone" type="text" placeholder="Search this site..." />-->
+                <button id="translate" type="button" name="Translate"></button>
+                <button id="settings" type="button" name="Settings"></button>
+            </div>
+        </section>
+        <header>
+            <div id="siteTitle">
+                <a href="index.html">
+                    <img src="images/SBELogo.png" id="siteLogo" alt="Maryland State Board of Elections logo" /><abbr title="Maryland State Board of Elections">MSBE</abbr><h1>Maryland State Board of Elections</h1>
+                </a>
+                <p id="siteSubtitle">Lorem ipsum, dolor sit amet; consectetur adipiscing elit.</p>
+            </div>
+            <!--Simple Nav-->
+            <!--<nav id="mainNav" role="navigation">
+                <div id="priNav">
+                    <a href="#Voting">Voting</a>
+                    <a href="#Candidacy">Candidacy</a>
+                    <a href="#Press">Press</a>
+                </div>
+                <div id="secNav">
+                    <a href="#Elections">Elections</a>
+                    <a href="#Campaign">Campaign&nbsp;Finance</a>
+                    <a href="#Agency">Agency</a>
+                    <a href="#Consectetur">Consectetur</a>
+                </div>
+            </nav>-->
+            <!--Conventional JS Nav-->
+            <!--<nav id="mainNav" role="navigation" aria-label="Primary navigation">
+                <ul id="priNav" class="majorNav">
+                    <li>
+                        <button class="menuButton" role="menuitem" aria-haspopup="true">Voting</button>
+                        <ul role="menu" class="menuList hidden">
+                            <li role="menuitem"><a href="#">Register to Vote</a></li>
+                            <li role="menuitem"><a href="#">Mail-In Voting</a></li>
+                            <li role="menuitem"><a href="#">Accessible Voting</a></li>
+                            <li role="menuitem"><a href="#">Change of Address</a></li>
+                            <li role="menuitem"><a href="#">Early Voting</a></li>
+                            <li role="menuitem"><a href="#">Provisional Voting</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="menuButton" role="menuitem" aria-haspopup="true">Candidacy</button>
+                        <ul role="menu" class="menuList hidden">
+                            <li role="menuitem"><a href="#">Requirements for Filing</a></li>
+                            <li role="menuitem"><a href="#">Qualifications for Filing</a></li>
+                            <li role="menuitem"><a href="#">State Ethics Financial Disclosure</a></li>
+                            <li role="menuitem"><a href="#">Judicial Disclosure</a></li>
+                            <li role="menuitem"><a href="#">Offices up for Election</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="menuButton" role="menuitem" aria-haspopup="true">Press</button>
+                        <ul role="menu" class="menuList hidden">
+                            <li role="menuitem"><a href="#">Lorem Ipsum</a></li>
+                            <li role="menuitem"><a href="#">Dolor sit Amet</a></li>
+                            <li role="menuitem"><a href="#">Consectetur</a></li>
+                            <li role="menuitem"><a href="#">Adipiscing Elit</a></li>
+                            <li role="menuitem"><a href="#">Phasellus ut Ornare</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="secNav">
+                    <li>
+                        <button class="menuButton" role="menuitem" aria-haspopup="true">Elections</button>
+                        <ul role="menu" class="menuList hidden">
+                            <li role="menuitem"><a href="#">Lorem Ipsum</a></li>
+                            <li role="menuitem"><a href="#">Dolor sit Amet</a></li>
+                            <li role="menuitem"><a href="#">Consectetur</a></li>
+                            <li role="menuitem"><a href="#">Adipiscing Elit</a></li>
+                            <li role="menuitem"><a href="#">Phasellus ut Ornare</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="menuButton" role="menuitem" aria-haspopup="true">Finance</button>
+                        <ul role="menu" class="menuList hidden">
+                            <li role="menuitem"><a href="#">Lorem Ipsum</a></li>
+                            <li role="menuitem"><a href="#">Dolor sit Amet</a></li>
+                            <li role="menuitem"><a href="#">Consectetur</a></li>
+                            <li role="menuitem"><a href="#">Adipiscing Elit</a></li>
+                            <li role="menuitem"><a href="#">Phasellus ut Ornare</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="menuButton" role="menuitem" aria-haspopup="true">Agency</button>
+                        <ul role="menu" class="menuList hidden">
+                            <li role="menuitem"><a href="#">Lorem Ipsum</a></li>
+                            <li role="menuitem"><a href="#">Dolor sit Amet</a></li>
+                            <li role="menuitem"><a href="#">Consectetur</a></li>
+                            <li role="menuitem"><a href="#">Adipiscing Elit</a></li>
+                            <li role="menuitem"><a href="#">Phasellus ut Ornare</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>-->
+            <!--Disclosure Nav-->
+            <nav id="mainNav" role="navigation" aria-label="Primary navigation">
+                <ul id="priNav">
+                    <li>
+                        <details name="nav">
+                            <summary role="menuitem" aria-haspopup="true">Voting</summary>
+                            <ul role="menu" class="menuList">
+                                <li role="menuitem"><a href="#">Register to Vote</a></li>
+                                <li role="menuitem"><a href="#">Mail-In Voting</a></li>
+                                <li role="menuitem"><a href="#">Accessible Voting</a></li>
+                                <li role="menuitem"><a href="#">Change of Address</a></li>
+                                <li role="menuitem"><a href="#">Early Voting</a></li>
+                                <li role="menuitem"><a href="#">Provisional Voting</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details name="nav">
+                            <summary class="menuButton" role="menuitem" aria-haspopup="true">Candidacy</summary>
+                            <ul role="menu" class="menuList">
+                                <li role="menuitem"><a href="#">Requirements for Filing</a></li>
+                                <li role="menuitem"><a href="#">Qualifications for Filing</a></li>
+                                <li role="menuitem"><a href="#">State Ethics Financial Disclosure</a></li>
+                                <li role="menuitem"><a href="#">Judicial Disclosure</a></li>
+                                <li role="menuitem"><a href="#">Offices up for Election</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details name="nav">
+                            <summary class="menuButton" role="menuitem" aria-haspopup="true">Press</summary>
+                            <ul role="menu" class="menuList">
+                                <li role="menuitem"><a href="#">Press Releases &amp; Statistics</a></li>
+                                <li role="menuitem"><a href="#">Reports</a></li>
+                                <li role="menuitem"><a href="#">Rumor Control</a></li>
+                                <li role="menuitem"><a href="#">Reporting Dis/Misinformation</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+                <ul id="secNav">
+                    <li>
+                        <details name="nav">
+                            <summary class="menuButton" role="menuitem" aria-haspopup="true">Elections</summary>
+                            <ul role="menu" class="menuList">
+                                <li role="menuitem"><a href="#">Lorem Ipsum</a></li>
+                                <li role="menuitem"><a href="#">Dolor sit Amet</a></li>
+                                <li role="menuitem"><a href="#">Consectetur</a></li>
+                                <li role="menuitem"><a href="#">Adipiscing Elit</a></li>
+                                <li role="menuitem"><a href="#">Phasellus ut Ornare</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details name="nav">
+                            <summary class="menuButton" role="menuitem" aria-haspopup="true">Campaign&nbsp;Finance</summary>
+                            <ul role="menu" class="menuList">
+                                <li role="menuitem"><a href="#">Lorem Ipsum</a></li>
+                                <li role="menuitem"><a href="#">Dolor sit Amet</a></li>
+                                <li role="menuitem"><a href="#">Consectetur</a></li>
+                                <li role="menuitem"><a href="#">Adipiscing Elit</a></li>
+                                <li role="menuitem"><a href="#">Phasellus ut Ornare</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details name="nav">
+                            <summary class="menuButton" role="menuitem" aria-haspopup="true">Agency</summary>
+                            <ul role="menu" class="menuList">
+                                <li role="menuitem"><a href="#">About Us</a></li>
+                                <li role="menuitem"><a href="#">Contact Us</a></li>
+                                <li role="menuitem"><a href="#">Feedback</a></li>
+                                <li role="menuitem"><a href="#">Public Information Act</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--<section id="alert">
+            <p><strong>Alert Label</strong>: Suspendisse erat urna, <a href="#">maecenas quis dolor sollicitudin</a>, ultrices risus a, tristique ante.</p>
+        </section>-->
+        <!--Body-->
+        <div id="content">
+            <section id="bodyMain">
+                <div id="welcome">
+                    <h2>Welcome Message</h2>
+                    <p>
+                        In gravida convallis odio id euismod. Cras eu odio sit amet eros vestibulum ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis purus nulla, nec placerat quam feugiat vel. Vivamus finibus cursus.
+                    </p>
+                </div>
+
+                <div id="homeFeatureRack">
+                    <a href="#Register" id="featureRegister" class="featurePri"><span>Register to Vote</span></a>
+                    <a href="#GetInvolved" id="featureGetInvolved" class="featurePri"><span>Get Involved</span></a>
+                    <a href="#Report" id="featureRumor" class="featurePri"><span>Rumor Control</span></a>
+                </div>
+
+                <!--<article id="whoWeAre">
+                    <h2>Who We Are</h2>
+                    <p>We are the official government body in charge of ensuring compliance with the requirements of Maryland and federal election laws by all persons involved in the election process.</p>
+                    <p><strong>Our mission</strong> is to empower all eligible Marylanders with the ability to exercise their right to vote in a free, secure, and transparent manner, inspiring confidence and trust in the electoral process.</p>
+                    <p><strong>Our vision</strong> is to be a national leader in Election Administration by ensuring we are able to <b>V</b>erify procedures and results, promote <b>O</b>pen processes, be the <b>T</b>rusted source of election information, and <b>E</b>mpower Marylanders with integrity and fairness.</p>
+                </article>-->
+
+                <div id="faqs">
+                    <h2>Frequently Asked Questions</h2>
+                    <details name="faq">
+                        <summary>
+                            Who Are We?
+                        </summary>
+                        <div class="detailsContent">
+                            <p>We are the official government body in charge of ensuring compliance with the requirements of Maryland and federal election laws by all persons involved in the election process.</p>
+                            <p><strong>Our mission</strong> is to empower all eligible Marylanders with the ability to exercise their right to vote in a free, secure, and transparent manner, inspiring confidence and trust in the electoral process.</p>
+                            <p><strong>Our vision</strong> is to be a national leader in Election Administration by ensuring we are able to <b>V</b>erify procedures and results, promote <b>O</b>pen processes, be the <b>T</b>rusted source of election information, and <b>E</b>mpower Marylanders with integrity and fairness.</p>
+                        </div>
+                    </details>
+                    <details name="faq">
+                        <summary>
+                            Lorem Ipsum?
+                        </summary>
+                        <div class="detailsContent">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut erat at ligula dictum blandit a in massa. In neque ipsum, rhoncus ac pulvinar nec, luctus sed lorem. Nullam id quam lobortis, finibus nulla quis, dapibus dolor.</p>
+                            <p>Curabitur consectetur est eu arcu dignissim convallis. Duis semper, augue ut malesuada venenatis, lacus ex semper lacus, tristique tempus neque mi in lorem. </p>
+                        </div>
+                    </details>
+                    <details name="faq">
+                        <summary>Phasellus ut Ornare?</summary>
+                        <div class="detailsContent">
+                            <p>Vestibulum ac condimentum ligula, eget scelerisque enim. Quisque sagittis faucibus justo nec scelerisque. Ut aliquam quis enim et congue. Nunc vitae lacus posuere, fringilla nisi non, feugiat ligula. Nullam orci nisl, scelerisque in orci ac, maximus scelerisque elit. Nulla efficitur lectus arcu, ut euismod est lacinia vitae. Maecenas at ipsum eros.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            <!--Sidebar-->
+            <section id="bodySide">
+                <div id="events">
+                    <h3 class="strip">Notable Events</h3>
+                    <table id="eventTable">
+                        <tbody>
+                            <tr>
+                                <th class="alignCenter">Thu<br />05-29</th>
+                                <td>
+                                    <a href="#">Next Board Meeting</a> (Virtual)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="alignCenter">Wed<br />06-16</th>
+                                <td>
+                                    <ul>
+                                        <li><a href="#">PG County Special Election</a></li>
+                                        <li><a href="#">Busy Day Here&hellip;</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="alignCenter">Tue<br />07-08</th>
+                                <td>
+                                    <a href="#">Wow, Another Neat Event!</a>
+                                    <p>Short description of the event here.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--<h3 id="social" class="strip">Social Media</h3>
+                <div id="socialMediaPosts">
+                    <a href="#" class="post">
+                        <span><img src="images/Jared_profile_pic-48.png" class="profilePic" alt="Social media profile picture of Jared DeMarinis, Maryland State Administrator of Elections." /></span>
+                        <span>Lorem ipsum, y'all! You can't make me call it 'X'!</span>
+                    </a>
+                    <a href="#">All Social Media</a>
+                </div>-->
+                <h3 id="election" class="strip">Latest in Elections</h3>
+                <ul class="pointer">
+                    <li><a href="#">2025 Election Calendar</a></li>
+                    <li><a href="#">Track Your Ballot</a></li>
+                    <li><a href="#">Overseas &amp; Military Voters</a></li>
+                    <li><a href="#">Municipal Election Results</a></li>
+                </ul>
+
+                <h3 id="materials" class="strip">Public Materials</h3>
+                <ul class="pointer">
+                    <li><a href="#">Online &amp; Downloadable Forms</a></li>
+                    <li><a href="#">Election Data &amp; Reports</a></li>
+                    <li><a href="#">Agency Board Documents</a></li>
+                    <li><a href="#">Local Board Documents</a></li>
+                </ul>
+            </section>
+        </div>
+        <!--Bottom-->
+        <!--<section id="bottom">
+            <div class="callout">
+                <h3>Phasellus ut Ornare</h3>
+                <p>Vestibulum ac condimentum ligula, eget scelerisque enim. Quisque sagittis faucibus justo nec scelerisque. Ut aliquam quis enim et congue. Nunc vitae lacus posuere, fringilla nisi non, feugiat ligula. Nullam orci nisl, scelerisque in orci ac, maximus scelerisque elit. Nulla efficitur lectus arcu, ut euismod est lacinia vitae. Maecenas at ipsum eros.</p>
+            </div>
+        </section>-->
+        <!--Footer-->
+        <section id="bottom">
+            <div id="cookiesPanel">
+                <p>We use cookies to improve your experience. We do not store this information or share it with anyone.</p><span><button type="button" id="cookiesAccept">Accept</button><button type="button" title="cookiesReject">Reject</button></span>
+            </div>
+        </section>
+        <section id="footer">
+            <div id="footerTop">
+                <nav id="footerNav">
+                    <ul class="noBullets">
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </nav>
+                <address>
+                    151 West Street, Suite 200<br />
+                    Annapolis, MD 21401<br />
+                    410-269-2840 | 800-222-8683<br />
+                    <a href="mailto:info.sbe@maryland.gov">info.sbe@maryland.gov</a>
+                </address>
+            </div>
+            <div id="copyright"><span>Copyright &copy;2025 Maryland State Board of Elections</span></div>
+        </section>
+    </div>
+</body>
+</html>
