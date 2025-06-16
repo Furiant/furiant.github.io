@@ -1,0 +1,124 @@
+﻿/*-- Interior (Section) Navigation -------------------------------- */
+
+#content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /*width: min-content;*/
+    margin: 0 auto;
+    background: #FFF;
+    padding: 1rem;
+    justify-content: left;
+}
+    #bodyMain {
+        flex: 1 0 auto;
+    }
+
+#intNav {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    border-bottom: 4px solid #DDD;
+}
+
+    #intNav summary {
+        background: #e7ecf2;
+        background: linear-gradient(90deg, rgba(220, 220, 220, 1) 0%, rgba(248, 248, 248, 1) 100%);
+        box-shadow: none;
+        font-size: 16pt;
+        font-weight: 450;
+        color: rgb(102, 107, 114);
+        margin: 0;
+        padding: 0.4rem 1rem;
+        border-radius: 5px 0 0 0;
+        overflow: hidden;
+    }
+
+/*#intNav summary::before {
+            font-size: 12pt;
+        }*/
+
+#intNav ul {
+    padding: 0 0 0.5rem 0;
+    margin: 0.5rem 0;
+    /*border: solid 1px yellow;*/
+}
+
+#content #intNav li {
+    display: list-item;
+    margin: 0 0 0 1rem;
+    padding: 0;
+    /*border: solid 1px green;*/
+}
+
+#content #intNav ul li::marker {
+    /*content:none;*/
+}
+
+#intNav li > a {
+    display: block;
+    margin-left: -1rem;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    background-color: #FFF;
+    font-size: 13pt;
+    transition: background-color 0.5s;
+    /*border:solid 1px red;*/
+}
+
+    #intNav li > a:hover, #intNav li > a:focus {
+        /*background: linear-gradient(90deg, rgba(240, 240, 240, 0.5) 0%, rgba(255, 255, 255, 0) 100%);*/
+        /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 1) 100%);*/
+        background-color: #FCFCFC;
+        box-shadow: inset 4px 0 0 0 rgba(0,0,0,0.1);
+        transition: background-color 0.2s;
+    }
+
+/*-- End Interior (Section) Navigation ------------------------------------- */
+
+
+/*-- Breakpoints ----------------------------------------------------------- */
+
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-width: 500px) {
+    /* High-resolution styles */    
+}
+
+@media screen and (min-width: 50em) {
+    #content {        
+        flex-direction: row;
+    }
+
+    #intNav {
+        width: min-content;
+        border-bottom:none;
+    }
+
+        #intNav summary span {
+            display: hidden;
+            visibility: collapse;
+            width: 0;
+            height: 0;
+        }
+
+        #intNav[open] summary span {
+            display: block;
+            visibility: unset;
+            width: min-content;
+            height: unset;
+        }
+
+        #intNav[open] ul {
+            border-bottom: 4px solid #DDD;
+        }
+
+    #intNav li > a {
+        font-size: 12pt;
+    }
+
+    #intNav hr {
+        display: none;
+    }
+
+    #bodyMain {
+        width: min-content;
+    }
+}
